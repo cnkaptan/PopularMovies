@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:2:1-22:12
+ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:2:1-23:12
 	package
 		ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml
@@ -14,11 +14,11 @@ ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/Andr
 		INJECTED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:5:5-66
+ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:7:5-20:19
+ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:7:5-21:19
 MERGED from [com.android.support:appcompat-v7:23.2.1] /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:23.2.1] /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.2.1] /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/AndroidManifest.xml:7:5-20
@@ -52,6 +52,10 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:17:17-77
 	android:name
 		ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:17:27-74
+activity#com.cnkaptan.popularmovies.MovieDetailActivity
+ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:20:9-66
+	android:name
+		ADDED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml:20:19-54
 uses-sdk
 INJECTED from /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.2.1] /Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/AndroidManifest.xml:21:5-23:78

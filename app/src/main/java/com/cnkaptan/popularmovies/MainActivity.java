@@ -1,6 +1,8 @@
 package com.cnkaptan.popularmovies;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.cnkaptan.popularmovies.adapter.MovieGridAdapter;
@@ -15,7 +17,7 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
 
     @Bind(R.id.gv_movie)
     GridView gvMovie;
@@ -28,6 +30,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         movieGridAdapter = new MovieGridAdapter(new ArrayList<Movie>(0));
         gvMovie.setAdapter(movieGridAdapter);
+        gvMovie.setOnItemClickListener(this);
         movieApi.getPopularMovies(API_KEY, new Callback<MovieResponse>() {
             @Override
             public void success(MovieResponse movieResponse, Response response) {
@@ -42,4 +45,8 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        startActivity(MovieDetailActivity.newIntent(this,movieGridAdapter.getItem(position)));
+    }
 }

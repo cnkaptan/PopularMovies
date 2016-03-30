@@ -44,6 +44,10 @@
         "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
+        "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/layout/activity_movie_detail.xml",
+        "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/res/layout/activity_movie_detail.xml"
+    },
+    {
         "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_activity_chooser_view.xml"
     },
