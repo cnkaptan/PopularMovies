@@ -26,7 +26,14 @@ public class MovieGridAdapter extends BaseAdapter {
     }
 
     public void addMovies(List<Movie> movies) {
-        this.movies.addAll(movies);
+        if (movies != null){
+            this.movies.addAll(movies);
+            notifyDataSetChanged();
+        }
+    }
+
+    public void clearDatas(){
+        this.movies.clear();
         notifyDataSetChanged();
     }
 
@@ -68,6 +75,7 @@ public class MovieGridAdapter extends BaseAdapter {
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
         }
+
 
 
     }

@@ -207,6 +207,8 @@
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
+    <dimen name="one_dp_divider_height">1dp</dimen>
+    <dimen name="play_icon_h_w">60dp</dimen>
     <dimen name="text_size_huge">26sp</dimen>
     <dimen name="text_size_large">22sp</dimen>
     <dimen name="text_size_medium">18sp</dimen>
@@ -252,11 +254,20 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="action_popular">Most Popular</string>
+    <string name="add_favourites">Add Favourites</string>
     <string name="api_key">aec6acb741640f4094e1822dd33f80d2</string>
     <string name="app_name">Popular Movies</string>
     <string name="base_url">http://api.themoviedb.org/3</string>
     <string name="favourite_button_text">Mark As \nFavourite</string>
+    <string name="favourites">Favourites</string>
+    <string name="no_review">There is no review!</string>
+    <string name="read_reviews">Read\nReviews</string>
+    <string name="reviews">Reviews</string>
+    <string name="see_reviews">See Reviews</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="trailers">Trailers</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

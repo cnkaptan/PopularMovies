@@ -3,6 +3,8 @@ package com.cnkaptan.popularmovies.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Arrays;
+
 public class Movie implements Parcelable {
     private String overview;
     private String original_language;
@@ -186,4 +188,76 @@ public class Movie implements Parcelable {
             return new Movie[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "overview='" + overview + '\'' +
+                ", original_language='" + original_language + '\'' +
+                ", original_title='" + original_title + '\'' +
+                ", video=" + video +
+                ", title='" + title + '\'' +
+                ", genre_ids=" + Arrays.toString(genre_ids) +
+                ", poster_path='" + poster_path + '\'' +
+                ", backdrop_path='" + backdrop_path + '\'' +
+                ", release_date='" + release_date + '\'' +
+                ", popularity=" + popularity +
+                ", vote_average=" + vote_average +
+                ", id=" + id +
+                ", adult=" + adult +
+                ", vote_count=" + vote_count +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Movie movie = (Movie) o;
+
+        if (video != movie.video) return false;
+        if (Double.compare(movie.popularity, popularity) != 0) return false;
+        if (Double.compare(movie.vote_average, vote_average) != 0) return false;
+        if (id != movie.id) return false;
+        if (adult != movie.adult) return false;
+        if (vote_count != movie.vote_count) return false;
+        if (overview != null ? !overview.equals(movie.overview) : movie.overview != null)
+            return false;
+        if (original_language != null ? !original_language.equals(movie.original_language) : movie.original_language != null)
+            return false;
+        if (original_title != null ? !original_title.equals(movie.original_title) : movie.original_title != null)
+            return false;
+        if (title != null ? !title.equals(movie.title) : movie.title != null) return false;
+        if (!Arrays.equals(genre_ids, movie.genre_ids)) return false;
+        if (poster_path != null ? !poster_path.equals(movie.poster_path) : movie.poster_path != null)
+            return false;
+        if (backdrop_path != null ? !backdrop_path.equals(movie.backdrop_path) : movie.backdrop_path != null)
+            return false;
+        return !(release_date != null ? !release_date.equals(movie.release_date) : movie.release_date != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = overview != null ? overview.hashCode() : 0;
+        result = 31 * result + (original_language != null ? original_language.hashCode() : 0);
+        result = 31 * result + (original_title != null ? original_title.hashCode() : 0);
+        result = 31 * result + (video ? 1 : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (genre_ids != null ? Arrays.hashCode(genre_ids) : 0);
+        result = 31 * result + (poster_path != null ? poster_path.hashCode() : 0);
+        result = 31 * result + (backdrop_path != null ? backdrop_path.hashCode() : 0);
+        result = 31 * result + (release_date != null ? release_date.hashCode() : 0);
+        temp = Double.doubleToLongBits(popularity);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(vote_average);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + id;
+        result = 31 * result + (adult ? 1 : 0);
+        result = 31 * result + vote_count;
+        return result;
+    }
 }

@@ -80,6 +80,10 @@
         "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/ic_play_arrow.png",
+        "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/res/drawable-xxxhdpi/ic_play_arrow.png"
+    },
+    {
         "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
         "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },

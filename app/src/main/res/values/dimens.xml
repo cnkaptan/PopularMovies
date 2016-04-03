@@ -23,5 +23,7 @@
     <dimen name="margin_xsmall">4dp</dimen>
     <dimen name="margin_xxsmall">2dp</dimen>
     <dimen name="btn_height_medium">48dp</dimen>
+    <dimen name="one_dp_divider_height">1dp</dimen>
+    <dimen name="play_icon_h_w">60dp</dimen>
 
 </resources>

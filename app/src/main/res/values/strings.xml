@@ -3,4 +3,13 @@
     <string name="base_url">http://api.themoviedb.org/3</string>
     <string name="api_key">aec6acb741640f4094e1822dd33f80d2</string>
     <string name="favourite_button_text">Mark As \nFavourite</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="action_popular">Most Popular</string>
+    <string name="trailers">Trailers</string>
+    <string name="read_reviews">Read\nReviews</string>
+    <string name="see_reviews">See Reviews</string>
+    <string name="add_favourites">Add Favourites</string>
+    <string name="no_review">There is no review!</string>
+    <string name="reviews">Reviews</string>
+    <string name="favourites">Favourites</string>
 </resources>

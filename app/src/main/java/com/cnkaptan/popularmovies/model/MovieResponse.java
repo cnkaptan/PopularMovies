@@ -89,4 +89,14 @@ public class MovieResponse implements Parcelable {
             return new MovieResponse[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "MovieResponse{" +
+                "page=" + page +
+                ", total_results=" + total_results +
+                ", total_pages=" + total_pages +
+                ", results=" + results +
+                '}';
+    }
 }
