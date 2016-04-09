@@ -5,12 +5,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".PopularMoviesApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".PopularMoviesApp">
+        android:theme="@style/AppTheme">
         <activity android:name=".ui.acitivty.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,11 +19,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.acitivty.MovieDetailActivity"
-            android:parentActivityName=".ui.acitivty.MainActivity" />
-        <activity
             android:name=".ui.acitivty.ReviewActivity"
-            android:label="@string/reviews"/>
+            android:label="@string/reviews" />
+        <activity android:name=".ui.acitivty.MovieDetailActivity"></activity>
     </application>
 
 </manifest>

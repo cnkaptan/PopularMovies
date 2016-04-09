@@ -1,34 +1,29 @@
 package com.cnkaptan.popularmovies.ui.acitivty;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
 
 import com.cnkaptan.popularmovies.BaseActivity;
 import com.cnkaptan.popularmovies.R;
-import com.cnkaptan.popularmovies.adapter.MovieGridAdapter;
 import com.cnkaptan.popularmovies.model.Movie;
-import com.cnkaptan.popularmovies.model.MovieResponse;
-import com.cnkaptan.popularmovies.utils.Utils;
+import com.cnkaptan.popularmovies.ui.fragment.MovieDetailFragment;
+import com.cnkaptan.popularmovies.ui.fragment.MovieListFragment;
 
-import java.util.ArrayList;
-
-import butterknife.Bind;
 import butterknife.ButterKnife;
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
 
-public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends BaseActivity implements MovieListFragment.OnMovieClickListener, MovieDetailFragment.NoMovieContentListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    @Bind(R.id.gv_movie)
-    GridView gvMovie;
-    private MovieGridAdapter movieGridAdapter;
+    private static final String TWO_PANE = "TWO_PANE_SAVE_STATE";
+    private static final String DETAILFRAGMENT_TAG = "Detail Movie Fragment";
+
+
+    private FragmentManager fragmentManager;
+    private boolean mTwoPane;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,18 +31,34 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        fragmentManager = getSupportFragmentManager();
+        if (findViewById(R.id.fl_fragment_frame) != null) {
+            // The detail container view will be present only in the large-screen layouts
+            // (res/layout-sw600dp). If this view is present, then the activity should be
+            // in two-pane mode.
+            mTwoPane = true;
+            Log.e(TAG, "" + mTwoPane);
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fl_fragment_frame, new MovieDetailFragment(), DETAILFRAGMENT_TAG)
+                        .commit();
+            }
+        } else {
+            mTwoPane = false;
+            Log.e(TAG, "" + mTwoPane);
+        }
+    }
 
 
-        initGridView();
-
+    public void replaceFragment(Fragment fragment, String tag) {
+        findViewById(R.id.fl_fragment_frame).setVisibility(View.VISIBLE);
+        fragmentManager.beginTransaction().
+                replace(R.id.fl_fragment_frame, fragment, tag).
+                addToBackStack(tag).
+                commit();
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        movieGridAdapter.notifyDataSetChanged();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,77 +68,33 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.action_popular:
-                getPopularMovies();
-                break;
-            case R.id.action_top_rated:
-                getTopRatedMovies();
-                break;
-            case R.id.action_favourites:
-                getFavouriteMovies();
-            break;
-            default:
-                break;
+    public void onBackPressed() {
+        if (fragmentManager.getBackStackEntryCount() > 1) {
+            super.onBackPressed();
+        } else {
+            finish();
         }
-
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void getFavouriteMovies() {
-        movieGridAdapter.clearDatas();
-        movieGridAdapter.addMovies(favouriteMovies);
-    }
-
-    private void initGridView() {
-        movieGridAdapter = new MovieGridAdapter(new ArrayList<Movie>(0));
-        gvMovie.setAdapter(movieGridAdapter);
-        gvMovie.setOnItemClickListener(this);
-        getPopularMovies();
-    }
-
-    private void getPopularMovies() {
-        final ProgressDialog progressDialog = Utils.showLoading(this);
-        movieApi.getPopularMovies(API_KEY, 1, new Callback<MovieResponse>() {
-            @Override
-            public void success(MovieResponse movieResponse, Response response) {
-                movieGridAdapter.clearDatas();
-                movieGridAdapter.addMovies(movieResponse.getResults());
-                progressDialog.dismiss();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                progressDialog.dismiss();
-            }
-        });
-    }
-
-    private void getTopRatedMovies() {
-        final ProgressDialog progressDialog = Utils.showLoading(this);
-        movieApi.getTopRated(API_KEY, 1, new Callback<MovieResponse>() {
-            @Override
-            public void success(MovieResponse movieResponse, Response response) {
-                movieGridAdapter.clearDatas();
-                movieGridAdapter.addMovies(movieResponse.getResults());
-                progressDialog.dismiss();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                progressDialog.dismiss();
-            }
-        });
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        startActivity(MovieDetailActivity.newIntent(this, movieGridAdapter.getItem(position)));
+    public void movieClick(Movie movie) {
+        if (mTwoPane) {
+            replaceFragment(MovieDetailFragment.newInstance(movie), MovieDetailFragment.class.getSimpleName());
+        } else {
+            startActivity(MovieDetailActivity.newIntent(this, movie));
+        }
     }
 
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
 
+        outState.putBoolean(TWO_PANE, mTwoPane);
+    }
+
+    @Override
+    public void noMovie() {
+        findViewById(R.id.fl_fragment_frame).setVisibility(View.GONE);
+    }
 }

@@ -22,15 +22,10 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        favouriteMovies = MySharedObjectManager.getFavourites();
         setRestApi();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        favouriteMovies = MySharedObjectManager.getFavourites();
-    }
 
     private void setRestApi() {
         RestAdapter restAdapter = new RestAdapter.Builder().

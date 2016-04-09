@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.cnkaptan.popularmovies.MainActivity" >
+        <activity android:name="com.cnkaptan.popularmovies.ui.acitivty.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,11 +25,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.cnkaptan.popularmovies.MovieDetailActivity"
-            android:parentActivityName="com.cnkaptan.popularmovies.MainActivity" />
-        <activity
-            android:name="com.cnkaptan.popularmovies.model.ReviewActivity"
+            android:name="com.cnkaptan.popularmovies.ui.acitivty.ReviewActivity"
             android:label="@string/reviews" />
+        <activity android:name="com.cnkaptan.popularmovies.ui.acitivty.MovieDetailActivity" />
     </application>
 
 </manifest>

@@ -60,6 +60,10 @@
         "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
+        "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/layout/fragment_movie_list.xml",
+        "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/res/layout/fragment_movie_list.xml"
+    },
+    {
         "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
         "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
@@ -162,6 +166,10 @@
     {
         "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/layout/fragment_fragment_movie_detail.xml",
+        "source": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/src/main/res/layout/fragment_fragment_movie_detail.xml"
     },
     {
         "merged": "/Users/cnkaptan/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
