@@ -28,6 +28,10 @@
             android:name="com.cnkaptan.popularmovies.ui.acitivty.ReviewActivity"
             android:label="@string/reviews" />
         <activity android:name="com.cnkaptan.popularmovies.ui.acitivty.MovieDetailActivity" />
+
+        <provider
+            android:name="com.cnkaptan.popularmovies.data.MovieProvider"
+            android:authorities="com.cnkaptan.popularmovies" />
     </application>
 
 </manifest>

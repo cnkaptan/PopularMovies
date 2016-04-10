@@ -22,6 +22,10 @@
             android:name=".ui.acitivty.ReviewActivity"
             android:label="@string/reviews" />
         <activity android:name=".ui.acitivty.MovieDetailActivity"></activity>
+
+        <provider
+            android:authorities="com.cnkaptan.popularmovies"
+            android:name=".data.MovieProvider"/>
     </application>
 
 </manifest>

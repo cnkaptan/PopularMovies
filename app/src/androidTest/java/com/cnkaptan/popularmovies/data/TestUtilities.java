@@ -22,6 +22,8 @@ import java.util.Set;
  */
 public class TestUtilities extends AndroidTestCase {
 
+    public static final String TEST_MOVIE_ID = "Deneme Movie Id" ;
+
     static void validateCursor(String error, Cursor valueCursor, ContentValues expectedValues) {
         assertTrue("Empty cursor returned. " + error, valueCursor.moveToFirst());
         validateCurrentRecord(error, valueCursor, expectedValues);
@@ -52,7 +54,7 @@ public class TestUtilities extends AndroidTestCase {
     static ContentValues createTestValues() {
         // Create a new map of values, where column names are the keys
         ContentValues testValues = new ContentValues();
-        testValues.put(MovieContract.MovieEntry.COLUMN_MOVIE_ID, "aa");
+        testValues.put(MovieContract.MovieEntry.COLUMN_MOVIE_ID, TEST_MOVIE_ID);
         testValues.put(MovieContract.MovieEntry.COLUMN_ORIGINAL_TITLE, "Test Movie");
         testValues.put(MovieContract.MovieEntry.COLUMN_POSTER_PATH, "poster path");
         testValues.put(MovieContract.MovieEntry.COLUMN_BACKDROP_PATH, "backdrop path");
@@ -66,7 +68,7 @@ public class TestUtilities extends AndroidTestCase {
         Students: You can uncomment this function once you have finished creating the
         LocationEntry part of the WeatherContract as well as the WeatherDbHelper.
      */
-    static long insertNorthPoleLocationValues(Context context) {
+    static long insertTestValues(Context context) {
         // insert our test records into the database
         MovieDbHelper dbHelper = new MovieDbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
